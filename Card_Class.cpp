@@ -11,16 +11,16 @@ Card::Card( void )
 
 Card::Card(int x, int y, char c) : _x(x), _y(y), _border_sign(c)
 {
-        _font = new char *[y]
+        _font = new char *[y];
         for(int i = 0; i < y; i++)
-                _font[i] = new char[x]
+                _font[i] = new char[x];
         std::cout << "System Created" << std::endl;
         return;
 }
 
-Card::Card(Card const &card)
+Card::Card(const Card &arg)
 {
-        *this = card;
+        *this = arg;
 }
 
 Card    &Card::operator=(Card const &card)
@@ -30,9 +30,9 @@ Card    &Card::operator=(Card const &card)
                 _x = card._x;
                 _y = card._y;
                 _border_sign = card._border_sign;
-                _font = new char *[_y]
-                for(int i = 0; i < y; i++)
-                        _font[i] = new char[_x]
+                _font = new char *[_y];
+                for(int i = 0; i < _y; i++)
+                        _font[i] = new char[_x];
         }
         return (*this);
 }
